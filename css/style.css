@@ -19,6 +19,7 @@ h1 {
   color: #ffd000;
   font-family: 'Exo 2', sans-serif;
   font-size: 4em;
+  margin-left: 5px;;
 }
 
 h2 {
@@ -75,7 +76,7 @@ p {
 li {
   position: relative;
   top: -320px;
-  left: 48px;
+  left: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13pt;
   margin-bottom: 8px;
@@ -93,7 +94,7 @@ li {
   position: relative;
   z-index: 0;
   left: 220px;
-  top: -380px;
+  top: -360px;
   height: 20px;
 }
 
