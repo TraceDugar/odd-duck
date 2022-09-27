@@ -156,3 +156,5 @@ renderImgs();
 
 imgContainer.addEventListener('click', handleClick);
 resultsBtn.addEventListener('click', handleShowResults);
+
+//--Table 11 Collaboration
