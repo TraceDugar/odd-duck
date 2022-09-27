@@ -1,27 +1,32 @@
 body {
-  background-color: #c7c7c7;
+  background-image: linear-gradient(to bottom right, rgb(59, 58, 58),
+      rgb(255, 255, 255));
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.title{
-margin-top: 30px;
-margin-left: 40px;
+.title {
+  margin-top: 60px;
+  margin-left: 125px;
+  margin-right: 125px;
 }
 
+#results-container {
+  text-align: center;
+  margin-right: 1435px;
+}
 
 h1 {
-  color: #fffb00;
+  color: #ffd000;
   -webkit-background-clip: text;
   font-family: 'Exo 2', sans-serif;
   font-size: 4em;
 }
 
-h2
-{
-font-family: 'Exo 2', sans-serif;
-margin-left: 50px;;
-font-size: 30pt;
-margin-bottom: 40px;
+h2 {
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 70px;
+  font-size: 30pt;
+  margin-bottom: 40px;
 }
 
 main {
@@ -37,7 +42,6 @@ main {
   justify-content: space-around;
   align-items: center;
   margin-right: 170px;
-  margin-top: 40px;
 }
 
 #results-list {
@@ -57,27 +61,26 @@ img {
   width: 400px;
   border-style: solid;
   border-width: 4px;
-  color: #fffb00
+  color: #ffd000;
 }
 
 p {
   position: absolute;
   left: 860px;
-  bottom: 780px;
+  bottom: 800px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30pt;
 }
 
 
-li{
-  text-align: center;
+li {
   position: relative;
-  top: -300px;
-  left: -50px;
+  top: -320px;
+  left: 48px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13pt;
   margin-bottom: 8px;
-  color: rgb(80, 80, 80);
+  color: rgb(219, 219, 219);
 }
 
 #show-results-btn {
@@ -90,15 +93,15 @@ li{
   background-color: #111;
   position: relative;
   z-index: 0;
-  left:  180px;
-  top: -180px;
+  left: 220px;
+  top: -380px;
   height: 20px;
 }
 
 
 #show-results-btn:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #d8b909, #f1ee23, #ccc012, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -138,9 +141,11 @@ li{
   border-radius: 10px;
 }
 
-
 footer {
-  height: 100px;
+  background-color: #000;
+  color: gray;
+  height: 10px;
+  padding: 10px;
   font-size: 1.5em;
   text-align: right;
 }
