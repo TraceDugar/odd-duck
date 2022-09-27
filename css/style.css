@@ -17,7 +17,6 @@ body {
 
 h1 {
   color: #ffd000;
-  -webkit-background-clip: text;
   font-family: 'Exo 2', sans-serif;
   font-size: 4em;
 }
@@ -144,8 +143,10 @@ li {
 footer {
   background-color: #000;
   color: gray;
-  height: 10px;
+  height: 20px;
   padding: 10px;
   font-size: 1.5em;
   text-align: right;
+  margin-right:5px;
+  margin-bottom: 12px;
 }
