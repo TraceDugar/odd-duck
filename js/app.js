@@ -14,7 +14,6 @@ let imgThree = document.getElementById('img-three');
 let resultsBtn = document.getElementById('show-results-btn');
 let resultsContainer = document.getElementById('results-container');
 
-
 //  CONSTRUCTOR FUNCTION 
 function Product(name, fileExtension = 'jpg') {
   this.name = name;
@@ -30,16 +29,18 @@ function randomIndex() {
   return Math.floor(Math.random() * prodArr.length);
 }
 
-function renderImgs() {
-  let img1Ndx = randomIndex();
-  let img2Ndx = randomIndex();
-  let img3Ndx = randomIndex();
+let indexArray = [];
 
-  // this will run and make sure they are unique.
-  while (img1Ndx === img2Ndx || img1Ndx === img3Ndx || img2Ndx === img3Ndx) {
-    img2Ndx = randomIndex();
-    img3Ndx = randomIndex();
+function renderImgs() {
+  while (indexArray.length < 6) {
+    let randomNum = randomIndex();
+    if (!indexArray.includes(randomNum)) {
+      indexArray.push(randomNum);
+    }
   }
+  let img1Ndx = indexArray.shift();
+  let img2Ndx = indexArray.shift();
+  let img3Ndx = indexArray.shift();
 
   imgOne.src = prodArr[img1Ndx].img;
   imgTwo.src = prodArr[img2Ndx].img;
@@ -54,6 +55,49 @@ function renderImgs() {
   imgThree.alt = prodArr[img3Ndx].name;
 }
 
+function renderChart() {
+
+  let prodNames = [];
+  let prodVotes = [];
+  let prodViews = [];
+
+  for (let i = 0; i < prodArr.length; i++) {
+    prodNames.push(prodArr[i].name);
+    prodVotes.push(prodArr[i].clicks);
+    prodViews.push(prodArr[i].views);
+  }
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: prodNames,
+      datasets: [{
+        data: prodVotes,
+        label: '# of Votes',
+        backgroundColor: [
+          'yellow',
+          'white',
+          'black',
+        ],
+        borderColor: [
+          'white',
+          'black',
+          'yellow',
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
 //  EVENT HANDLERS 
 function handleClick(event) {
   console.dir(event.target);
@@ -66,23 +110,23 @@ function handleClick(event) {
       prodArr[i].clicks++;
     }
   }
-
   voteCount--;
 
   renderImgs();
 
   if (voteCount === 0) {
     imgContainer.removeEventListener('click', handleClick);
+    renderChart();
   }
 }
 
 function handleShowResults() {
   if (voteCount === 0) {
-    for (let i = 0; i < prodArr.length; i++) {
-      let liElem = document.createElement('li');
-      liElem.textContent = `${prodArr[i].name} recieved ${prodArr[i].clicks} votes, and was seen ${prodArr[i].views} times.`;
-      resultsContainer.appendChild(liElem);
-    }
+    // for (let i = 0; i < prodArr.length; i++) {
+    //   let liElem = document.createElement('li');
+    //   liElem.textContent = `${prodArr[i].name} recieved ${prodArr[i].clicks} votes, and was seen ${prodArr[i].views} times.`;
+    //   resultsContainer.appendChild(liElem);
+    // }
     resultsBtn.removeEventListener('click', handleShowResults);
   }
 }
