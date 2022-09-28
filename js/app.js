@@ -108,6 +108,12 @@ function handleClick(event) {
   for (let i = 0; i < prodArr.length; i++) {
     if (prodArr[i].name === imgClicked) {
       prodArr[i].clicks++;
+      //  Local Storage
+      // step 1 stringify
+      let prodString = JSON.stringify(prodArr)
+      //  step 2 Add to local storage
+      localStorage.setItem('myProds', prodString)
+
     }
   }
   voteCount--;
@@ -131,7 +137,20 @@ function handleShowResults() {
   }
 }
 
+// more local storage
+    // step 3 Retrieval
+let retrievedProds = localStorage.getItem('myProds');
+    // step 4 Parse
+let parsedProd = JSON.parse(retrievedProds);
+
+
+
 // EXECUTABLE CODE 
+
+// Checking if First visit
+if(retrievedProds){
+  prodArr = parsedProd
+} else {
 new Product('bag');
 new Product('banana');
 new Product('bathroom');
@@ -151,7 +170,47 @@ new Product('tauntaun');
 new Product('unicorn');
 new Product('water-can');
 new Product('wine-glass');
+}
 
+// Rebuild using Constructor
+
+// if(retrievedProds){
+//   for(let i = 0; i < retrievedProds; i++){
+//     if(parsedProd[i].name === bag){
+//       let reconBag = new Product(parsedProd[i].name);
+//       reconBag.clicks = parsedProd[i].clicks;
+//       reconBag.views = parsedProd[i].views;
+//     }
+//     else{
+//       let reconBag = new Product(parsedProd[i].name);
+//       reconBag.clicks = parsedProd[i].clicks;
+//       reconBag.views = parsedProd[i].views;
+//     }
+//   }
+// } else {
+// new Product('bag');
+// new Product('banana');
+// new Product('bathroom');
+// new Product('boots');
+// new Product('breakfast');
+// new Product('bubblegum');
+// new Product('chair');
+// new Product('cthulhu');
+// new Product('dog-duck');
+// new Product('dragon');
+// new Product('pen');
+// new Product('pet-sweep');
+// new Product('scissors');
+// new Product('shark');
+// new Product('sweep', 'png');
+// new Product('tauntaun');
+// new Product('unicorn');
+// new Product('water-can');
+// new Product('wine-glass');
+// }
+
+
+console.log(prodArr);
 renderImgs();
 
 imgContainer.addEventListener('click', handleClick);
