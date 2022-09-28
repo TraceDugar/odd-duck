@@ -76,14 +76,14 @@ function renderChart() {
         data: prodVotes,
         label: '# of Votes',
         backgroundColor: [
-          'yellow',
+          'gold',
           'white',
           'black',
         ],
         borderColor: [
-          'white',
           'black',
-          'yellow',
+          'gold',
+          'white',
         ],
         borderWidth: 1
       }]
