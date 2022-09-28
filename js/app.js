@@ -77,13 +77,20 @@ function renderChart() {
         label: '# of Votes',
         backgroundColor: [
           'gold',
-          'white',
-          'black',
         ],
         borderColor: [
           'black',
-          'gold',
+        ],
+        borderWidth: 1
+      },
+      {
+        data: prodViews,
+        label: '# of views',
+        backgroundColor: [
           'white',
+        ],
+        borderColor: [
+          'black',
         ],
         borderWidth: 1
       }]
@@ -138,9 +145,9 @@ function handleShowResults() {
 }
 
 // more local storage
-    // step 3 Retrieval
+// step 3 Retrieval
 let retrievedProds = localStorage.getItem('myProds');
-    // step 4 Parse
+// step 4 Parse
 let parsedProd = JSON.parse(retrievedProds);
 
 
@@ -148,28 +155,28 @@ let parsedProd = JSON.parse(retrievedProds);
 // EXECUTABLE CODE 
 
 // Checking if First visit
-if(retrievedProds){
+if (retrievedProds) {
   prodArr = parsedProd
 } else {
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-new Product('chair');
-new Product('cthulhu');
-new Product('dog-duck');
-new Product('dragon');
-new Product('pen');
-new Product('pet-sweep');
-new Product('scissors');
-new Product('shark');
-new Product('sweep', 'png');
-new Product('tauntaun');
-new Product('unicorn');
-new Product('water-can');
-new Product('wine-glass');
+  new Product('bag');
+  new Product('banana');
+  new Product('bathroom');
+  new Product('boots');
+  new Product('breakfast');
+  new Product('bubblegum');
+  new Product('chair');
+  new Product('cthulhu');
+  new Product('dog-duck');
+  new Product('dragon');
+  new Product('pen');
+  new Product('pet-sweep');
+  new Product('scissors');
+  new Product('shark');
+  new Product('sweep', 'png');
+  new Product('tauntaun');
+  new Product('unicorn');
+  new Product('water-can');
+  new Product('wine-glass');
 }
 
 // Rebuild using Constructor
