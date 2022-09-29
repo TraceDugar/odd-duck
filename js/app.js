@@ -29,8 +29,10 @@ function randomIndex() {
   return Math.floor(Math.random() * prodArr.length);
 }
 
+//image array
 let indexArray = [];
 
+// images rendering
 function renderImgs() {
   while (indexArray.length < 6) {
     let randomNum = randomIndex();
@@ -55,6 +57,8 @@ function renderImgs() {
   imgThree.alt = prodArr[img3Ndx].name;
 }
 
+
+//chart function
 function renderChart() {
 
   let prodNames = [];
@@ -153,7 +157,7 @@ let parsedProd = JSON.parse(retrievedProds);
 
 
 // EXECUTABLE CODE 
-
+// Constructor
 // Checking if First visit
 if (retrievedProds) {
   prodArr = parsedProd
