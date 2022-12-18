@@ -147,7 +147,7 @@ let parsedProd = JSON.parse(retrievedProds);
 if (retrievedProds) {
   prodArr = parsedProd
 } else {
-  //  PRODUCT CONTRUCTOR
+  //  PRODUCT CONSTRUCTOR
   new Product('Acoustic');
   new Product('BassGuitar');
   new Product('Conga');
