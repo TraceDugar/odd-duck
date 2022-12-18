@@ -120,8 +120,7 @@ function handleClick(event) {
     if (prodArr[i].name === imgClicked) {
       prodArr[i].clicks++;
       let prodString = JSON.stringify(prodArr)
-      localStorage.setItem('myProds', prodString)
-
+      localStorage.setItem('myProds', prodString);
     }
   }
   voteCount--;
@@ -147,7 +146,7 @@ let parsedProd = JSON.parse(retrievedProds);
 if (retrievedProds) {
   prodArr = parsedProd
 } else {
-  //  PRODUCT CONSTRUCTOR
+  
   new Product('Acoustic');
   new Product('BassGuitar');
   new Product('Conga');
