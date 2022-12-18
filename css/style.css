@@ -2,82 +2,83 @@ body {
   background-image: linear-gradient(to bottom right, rgb(59, 58, 58),
       rgb(255, 255, 255));
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden; 
 }
 
 .title {
-  margin-top: 60px;
-  margin-left: 100px;
-  margin-right: 75px;
+  margin-top: 4vh;
+  margin-left: 4.5vh;
 }
 
 #results-container {
   text-align: center;
-  margin-right: 1435px;
 }
 
 h1 {
-  color: #ffd000;
   font-family: 'Exo 2', sans-serif;
-  font-size: 49pt;
-  margin-left: 5px;;
+  font-size: 4em;
+  margin-left: .1vh;
+  color: #ffd000;
 }
 
 h2 {
   font-family: 'Exo 2', sans-serif;
-  margin-left: 70px;
-  font-size: 30pt;
+  margin-left: 6vh;
+  font-size: 2.5em;
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(2vh, auto);
 }
 
 #img-container {
-  margin-top: 130px ;
-  margin-left: 550px;
-  margin-right: 110px;
+  position: relative;
+  margin-top: 22vh;
+  margin-left: 44vh;
+  margin-right: 50vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
-  top: -40px;
 }
  
-
-#results-list {
-  grid-row: 1/5;
-  margin-left: 30px;
-}
-
 ul {
   color: #fff;
 }
 
 img {
   justify-content: space-between;
-  margin-left: 60px;
-  height: 300px;
-  width: 300px;
+  margin-left: 10vh;
+  height: 25vh;
+  width: 25vh;
   border-style: solid;
-  border-width: 4px;
+  border-width: .4vh;
+  margin-bottom: 17vh;
   color: #ffd000;
-  margin-bottom: 98px;
 }
 
 p {
-  position: absolute;
-  left: 880px;
-  bottom: 770px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30pt;
+  position: absolute;
+  left: 30.5%;
+  bottom: 20vh;
+  font-size: 2.75em;
 }
 
 footer {
-  background-color: #000;
-  color: gray;
-  padding: 10px;
+  position: absolute;
+  padding: 1vh;
+  width: 100%;
   font-size: 1.5em;
-  text-align: right;
+  text-align: center;
+  color: gray;
+  background-color: #000;
+  height: 20vh;
 }
+
+#plzVote {
+ position: absolute;
+ top: 22vh;
+}
+

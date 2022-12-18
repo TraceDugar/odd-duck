@@ -119,10 +119,7 @@ function handleClick(event) {
   for (let i = 0; i < prodArr.length; i++) {
     if (prodArr[i].name === imgClicked) {
       prodArr[i].clicks++;
-      //  Local Storage
-      // step 1 stringify
       let prodString = JSON.stringify(prodArr)
-      //  step 2 Add to local storage
       localStorage.setItem('myProds', prodString)
 
     }
@@ -139,92 +136,40 @@ function handleClick(event) {
 
 function handleShowResults() {
   if (voteCount === 0) {
-    // for (let i = 0; i < prodArr.length; i++) {
-    //   let liElem = document.createElement('li');
-    //   liElem.textContent = `${prodArr[i].name} recieved ${prodArr[i].clicks} votes, and was seen ${prodArr[i].views} times.`;
-    //   resultsContainer.appendChild(liElem);
-    // }
     resultsBtn.removeEventListener('click', handleShowResults);
   }
 }
 
-// more local storage
-// step 3 Retrieval
 let retrievedProds = localStorage.getItem('myProds');
-// step 4 Parse
+
 let parsedProd = JSON.parse(retrievedProds);
 
-
-
-// EXECUTABLE CODE 
-// Constructor
-// Checking if First visit
 if (retrievedProds) {
   prodArr = parsedProd
 } else {
-  new Product('bag');
-  new Product('banana');
-  new Product('bathroom');
-  new Product('boots');
-  new Product('breakfast');
-  new Product('bubblegum');
-  new Product('chair');
-  new Product('cthulhu');
-  new Product('dog-duck');
-  new Product('dragon');
-  new Product('pen');
-  new Product('pet-sweep');
-  new Product('scissors');
-  new Product('shark');
-  new Product('sweep', 'png');
-  new Product('tauntaun');
-  new Product('unicorn');
-  new Product('water-can');
-  new Product('wine-glass');
+  //  PRODUCT CONTRUCTOR
+  new Product('Acoustic');
+  new Product('BassGuitar');
+  new Product('Conga');
+  new Product('DrumKit');
+  new Product('DrumMachine');
+  new Product('Harp');
+  new Product('LesPaul');
+  new Product('Microphone');
+  new Product('MidiController');
+  new Product('MixingConsole');
+  new Product('Organ');
+  new Product('Piano');
+  new Product('Saxophone');
+  new Product('StepSequencer');
+  new Product('Synthesizer');
+  new Product('Telecaster');
+  new Product('Trumpet');
+  new Product('TurnTable');
+  new Product('Viola');
 }
-
-// Rebuild using Constructor
-
-// if(retrievedProds){
-//   for(let i = 0; i < retrievedProds; i++){
-//     if(parsedProd[i].name === bag){
-//       let reconBag = new Product(parsedProd[i].name);
-//       reconBag.clicks = parsedProd[i].clicks;
-//       reconBag.views = parsedProd[i].views;
-//     }
-//     else{
-//       let reconBag = new Product(parsedProd[i].name);
-//       reconBag.clicks = parsedProd[i].clicks;
-//       reconBag.views = parsedProd[i].views;
-//     }
-//   }
-// } else {
-// new Product('bag');
-// new Product('banana');
-// new Product('bathroom');
-// new Product('boots');
-// new Product('breakfast');
-// new Product('bubblegum');
-// new Product('chair');
-// new Product('cthulhu');
-// new Product('dog-duck');
-// new Product('dragon');
-// new Product('pen');
-// new Product('pet-sweep');
-// new Product('scissors');
-// new Product('shark');
-// new Product('sweep', 'png');
-// new Product('tauntaun');
-// new Product('unicorn');
-// new Product('water-can');
-// new Product('wine-glass');
-// }
-
 
 console.log(prodArr);
 renderImgs();
 
 imgContainer.addEventListener('click', handleClick);
-resultsBtn.addEventListener('click', handleShowResults);
-
-//--Table 11 Collaboration
